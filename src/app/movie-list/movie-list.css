@@ -1,0 +1,134 @@
+.movies-page {
+  min-height: 100vh;
+  background: linear-gradient(to right, #1a1a1a, #1a1a1a);
+}
+
+.movie-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.movie-card img {
+  z-index: 2;
+  position: relative;
+}
+
+.movie-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
+}
+
+.movie-poster {
+  height: 300px;
+  object-fit: cover;
+  transition: opacity 0.3s;
+}
+
+.movies-header h2 {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.movies-header p {
+  color: #bbb;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+
+.overlay {
+  z-index: 1;
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.4s;
+  /* لا نستخدم pointer-events: none هنا */
+}
+
+.overlay a,
+.overlay button {
+  pointer-events: auto;
+  /* يسمح للأزرار والروابط بالضغط */
+}
+
+.movie-card:hover .overlay {
+  opacity: 1;
+}
+
+/* ❤️ Favorite Heart Button */
+.fav-heart-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  z-index: 10;
+  /* فوق كل حاجة */
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+
+.fav-heart-btn i {
+  font-size: 1.5rem;
+}
+
+.fav-heart-btn:hover {
+  transform: scale(1.15);
+  background: rgba(255, 0, 0, 0.9);
+}
+
+.fav-heart-btn:hover i {
+  color: #fff !important;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+}
+
+.input-group .btn:focus,
+.input-group .btn:active,
+.input-group .btn:focus-visible,
+.input-group .btn-danger:focus,
+.input-group .btn-danger:active,
+.input-group .btn-danger:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: #dc3545 !important;
+  /* نفس اللون الأحمر */
+  color: #fff !important;
+}
+
+/* إزالة التوهّج الأزرق اللي بيظهر من المتصفح */
+button::-moz-focus-inner {
+  border: 0 !important;
+}
+
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* كمان نلغي التركيز عن الـ input نفسه عشان مفيش لون مختلف حواليه */
+.input-group .form-control:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}

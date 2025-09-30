@@ -1,0 +1,68 @@
+/* تطبيق اللون الداكن على كل الصفحة */
+body, html {
+  background-color: #1a1a1a !important; /* أسود داكن */
+  color: #f1f1f1; /* نص فاتح */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* كل الروابط نص فاتح */
+a {
+  color: #f1f1f1;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff4c4c; /* لون أحمر عند hover */
+}
+
+/* البطاقات (cards) */
+.card {
+  background-color: #1a1a1a; /* داكن */
+  color: #f1f1f1;
+  border: none;
+}
+
+/* الأزرار */
+.btn {
+  color: #f1f1f1;
+  border: none;
+}
+
+.btn-outline-danger {
+  color: #ff4c4c;
+  border-color: #ff4c4c;
+}
+
+.btn-outline-danger:hover {
+  background-color: #ff4c4c;
+  color: #fff;
+}
+
+/* مدخلات البحث */
+input, textarea {
+  background-color: #1a1a1a;
+  color: #f1f1f1;
+  border: 1px solid #333;
+}
+
+/* navbar داكنة */
+.navbar {
+  background-color: #1a1a1a !important;
+}
+
+/* overlay للفيلم */
+.overlay {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+
+/* pagination */
+.btn-outline-light, .btn-danger {
+  color: #f1f1f1;
+}
+
+body, .container-fluid, .card, .overlay {
+  transition: background-color 0.3s, color 0.3s;
+}

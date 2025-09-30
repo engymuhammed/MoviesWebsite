@@ -1,0 +1,141 @@
+.home-page {
+    background-color: #1a1a1a;
+    /* أسود داكن فاتح شوي */
+    min-height: 100vh;
+}
+
+.gradient-text span {
+    background: linear-gradient(to right, black, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.sub-text {
+    font-size: 1.25rem;
+    /* أكبر شوي */
+    color: #f1f1f1;
+    /* فاتح وواضح */
+    font-weight: 500;
+    /* نص متوسط السمك */
+    line-height: 1.6;
+    /* مسافة بين السطور أفضل */
+    max-width: 700px;
+    /* الحد الأقصى لعرض النص */
+    margin: 0 auto;
+    /* توسيط النص */
+}
+
+.trending-section {
+    position: relative;
+}
+
+.trending-wrapper {
+    position: relative;
+}
+
+.trending-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 15px;
+}
+
+.trending-slider::-webkit-scrollbar {
+    display: none;
+    /* 🚫 يخفي الاسكرول كروم/إيدج */
+}
+
+.trending-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 40px;
+    /* كان 15px، زوّدناه */
+    padding: 0 30px;
+    /* علشان نسيب مسافة من الجنبين */
+}
+
+
+
+.trending-card {
+    flex: 0 0 auto;
+    width: 160px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.trending-card:hover {
+    transform: scale(1.05);
+}
+
+.trending-poster {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.movie-poster {
+    cursor: pointer;
+}
+
+/* الرقم بتاع الترتيب */
+.rank-number {
+    position: absolute;
+    bottom: 5px;
+    left: -22px;
+    font-size: 6rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+    -webkit-text-stroke: 2px black;
+}
+
+
+
+/* 📌 Arrow Buttons */
+.trending-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease-in-out;
+}
+
+.trending-btn:hover {
+    background: rgba(220, 53, 69, 0.8);
+    /* لون أحمر شفاف عند الـ hover */
+}
+
+.trending-btn.left {
+    left: -20px;
+}
+
+.trending-btn.right {
+    right: -20px;
+}
+
+.trending-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 40px;
+    padding: 0 30px;
+
+    /* إخفاء الـ scrollbar في كل المتصفحات */
+    -ms-overflow-style: none;
+}
+
+.trending-slider::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Edge */
+}

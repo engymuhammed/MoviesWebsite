@@ -1,0 +1,89 @@
+<div class="container-fluid py-5 movies-page bg-dark text-light">
+
+  <!-- 🔍 Search -->
+  <div class="row mb-5">
+    <div class="col-md-8 mx-auto">
+      <form (ngSubmit)="searchMovies()" class="search-form">
+        <div class="input-group shadow-lg rounded-pill overflow-hidden bg-gradient">
+          <input type="text" class="form-control border-0 ps-4 py-3 bg-dark text-light"
+            placeholder=" Search your favorite movie..." [(ngModel)]="searchQuery" name="search"
+            (keyup.enter)="searchMovies()">
+          <button type="submit" class="btn btn-danger px-4 fw-bold d-flex align-items-center gap-2">
+            <i class="bi bi-search"></i> Search
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- 🎬 Movies Section Title -->
+  <div class="movies-header text-center mb-4">
+    <h2 class="fw-bold text-light">Browse the latest and most popular movies</h2>
+  </div>
+
+  <!-- 🎬 Movies Grid -->
+
+  <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-4">
+    <div class="col" *ngFor="let m of movies">
+      <div class="movie-card card h-100 border-0 shadow-lg bg-dark text-white position-relative">
+
+        <!-- Poster -->
+        <img [src]="m.poster_path ? 'https://image.tmdb.org/t/p/w500' + m.poster_path : 'assets/no-poster.png'"
+          class="card-img-top movie-poster rounded" alt="{{ m.title || 'Movie Poster' }}"
+          title="{{ m.title || 'Movie Poster' }}" (click)="goToDetails(m.id)">
+
+
+
+        <!--  Favorite Button -->
+        <button type="button" class="fav-heart-btn position-absolute top-0 end-0 m-2" (click)="toggleFavorite(m)"
+          [attr.aria-label]="isFavorite(m) ? 'Remove from favorites' : 'Add to favorites'">
+
+          <i class="bi fs-4" [ngClass]="isFavorite(m) ? 'bi-heart-fill text-danger' : 'bi-heart text-dark fs-4'">
+          </i>
+
+          <!-- نص مخفي لأدوات الـ Accessibility -->
+          <span class="visually-hidden">
+            {{ isFavorite(m) ? 'Remove from favorites' : 'Add to favorites' }}
+          </span>
+        </button>
+
+        <!-- Overlay -->
+        <div class="overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
+          <h6 class="fw-bold mb-2">{{ m.title }}</h6>
+          <p class="small">📅 {{ m.release_date }}</p>
+          <a [routerLink]="['/movie', m.id]" class="btn btn-outline-danger btn-sm rounded-pill mt-2">
+            Details
+          </a>
+        </div>
+
+        <!-- Card Body -->
+        <div class="card-body text-center">
+          <h6 class="card-title fw-bold text-truncate">{{ m.title }}</h6>
+          <div class="rating mb-2">
+            <ng-container *ngFor="let star of [1,2,3,4,5]">
+              <i class="bi" [ngClass]="m.vote_average/2 >= star ? 
+                 'bi-star-fill text-warning' : 
+                 (m.vote_average/2 >= star-0.5 ? 
+                 'bi-star-half text-warning' : 
+                 'bi-star text-muted')">
+              </i>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📄 Pagination -->
+  <div class="d-flex justify-content-center align-items-center gap-3 my-5">
+    <button type="button" class="btn btn-outline-light rounded-pill px-5 py-2 fw-semibold shadow-sm"
+      (click)="previousPage()" [disabled]="page === 1">
+      Previous
+    </button>
+
+    <span class="fw-bold fs-4 text-danger">Page {{ page }}</span>
+
+    <button type="button" class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm" (click)="nextPage()">
+      Next
+    </button>
+  </div>
+</div>

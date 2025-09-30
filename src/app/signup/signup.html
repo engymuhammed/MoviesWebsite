@@ -1,0 +1,15 @@
+<div class="signup-page d-flex justify-content-center align-items-center vh-100 text-light">
+  <div class="signup-card p-5 rounded shadow-lg text-center">
+    <h1 class="mb-4 gradient-logo">MyMovies</h1>
+    <p class="mb-4 text-light">Create your account to start exploring movies!</p>
+
+    <input type="text" [(ngModel)]="name" placeholder="Full Name" class="form-control mb-3" />
+    <input type="email" [(ngModel)]="email" placeholder="Email" class="form-control mb-3" />
+    <input type="password" [(ngModel)]="password" placeholder="Password" class="form-control mb-4" />
+
+    <button (click)="signup()" class="btn btn-danger btn-lg w-100 mb-3">Sign Up</button>
+    <p class="text-light">
+      Already have an account? <a routerLink="/login" class="text-danger">Login</a>
+    </p>
+  </div>
+</div>

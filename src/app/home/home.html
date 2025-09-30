@@ -1,0 +1,50 @@
+<div class="home-page text-light py-5">
+    <div class="container text-center"></div>
+
+    <div class="container text-center"> <!-- Logo -->
+        <!-- Welcome Text -->
+        <h1 class="fw-bold mb-3 gradient-text"> Welcome to <span>MyMovies</span></h1>
+        <p class="sub-text mb-4">
+            Dive into the world of cinema explore the hottest releases, track trending hits, and create your ultimate
+            movie collection!
+        </p>
+
+        <!-- Buttons -->
+        <div class="d-flex justify-content-center gap-3"> <a routerLink="/MovieList"
+                class="btn btn-danger btn-lg rounded-pill px-5"> Browse Movies </a> <a routerLink="/favorites"
+                class="btn btn-outline-light btn-lg rounded-pill px-5"> View Favourites </a> </div>
+        <!-- 🔥 Trending Now -->
+        <div class="trending-section my-5">
+            <h3 class="fw-bold text-light mb-4">Trending Now</h3>
+
+            <div class="trending-wrapper position-relative">
+                <!-- زرار left -->
+                <button class="trending-btn left" (click)="scrollTrending('left')" aria-label="Scroll Left"
+                    title="Scroll Left">
+                    <i class="bi bi-chevron-left" aria-hidden="true"></i>
+                </button>
+                <!-- السلايدر -->
+                <div class="trending-slider d-flex overflow-auto" #trendingSlider>
+                    <div class="trending-card position-relative me-3" *ngFor="let t of trending; let i = index"
+                        (click)="goToDetails(t.id)">
+
+                        <!-- Poster -->
+                        <img [src]="t.poster_path ? 'https://image.tmdb.org/t/p/w500' + t.poster_path : 'assets/no-poster.png'"
+                            class="trending-poster rounded shadow-lg" alt="{{ t.title || 'Movie Poster' }}"
+                            title="{{ t.title || 'Movie Poster' }}">
+
+
+                        <!-- Rank Number -->
+                        <div class="rank-number">{{ i + 1 }}</div>
+                    </div>
+                </div>
+
+                <!-- زرار right -->
+                <button class="trending-btn right" (click)="scrollTrending('right')" aria-label="Scroll Right"
+                    title="Scroll Right">
+                    <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

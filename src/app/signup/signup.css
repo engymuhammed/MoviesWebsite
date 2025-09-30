@@ -1,0 +1,33 @@
+.signup-page {
+  background-color: #1a1a1a; /* خلفية ثابتة */
+  min-height: 100vh; /* يغطي طول الشاشة بالكامل */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-card {
+  background-color: #222; /* كارد أفتح */
+  max-width: 400px;
+  width: 100%;
+}
+
+.gradient-logo {
+  background: linear-gradient(to right, black, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.text-muted {
+  color: #d3d3d3;
+}
+
+.text-light {
+  color: #e0e0e0;
+}
+
+.text-danger {
+  color: #ff4d4d;
+}

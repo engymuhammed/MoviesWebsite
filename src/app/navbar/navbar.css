@@ -1,0 +1,36 @@
+.gradient-logo {
+    background: linear-gradient(to right, black, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 1.5rem;
+    /* ممكن تعدلي الحجم حسب اللوغو */
+}
+
+.gradient-logo {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.logout-btn {
+    background: transparent;
+    /* بدون لون خلفية */
+    color: #ff4c4c;
+    /* لون النص أحمر */
+    font-weight: bold;
+    border: 2px solid #ff4c4c;
+    /* حدود واضحة */
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    /* شكل دائري أنيق */
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: #ff4c4c;
+    /* الخلفية تتحول للأحمر عند hover */
+    color: #fff;
+    /* النص يصبح أبيض */
+    transform: scale(1.05);
+    /* تكبير بسيط */
+    cursor: pointer;
+}

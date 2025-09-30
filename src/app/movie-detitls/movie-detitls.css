@@ -1,0 +1,91 @@
+img {
+  border-radius: 16px;
+}
+
+h2 {
+  color: aliceblue !important;
+}
+
+p {
+  color: aliceblue !important;
+}
+
+.loading-message {
+  color: #f1f1f1;
+}
+
+.recommended-carousel-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.recommended-carousel {
+  display: flex;
+  gap: 10px;
+  animation: scroll-left 20s linear infinite;
+}
+
+.recommended-movie-card {
+  flex: 0 0 auto;
+  width: 120px;
+  height: 220px;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.recommended-movie-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.recommended-movie-card h6 {
+  font-size: 0.8rem;
+  margin: 4px 2px 0 2px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recommended-movie-card p {
+  font-size: 0.7rem;
+  margin: 2px 2px 4px 2px;
+  text-align: center;
+  color: #f8f9fa;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+
+  /* ممكن تزود/تقل حسب عدد الكروت */
+}
+
+
+
+.recommended-movie-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* إخفاء scrollbar */
+.recommended-carousel-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.recommended-carousel-wrapper {
+  -ms-overflow-style: none;
+}

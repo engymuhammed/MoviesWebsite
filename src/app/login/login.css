@@ -1,0 +1,46 @@
+.login-page {
+  background-color: #1a1a1a; /* أسود فاتح */
+}
+
+.login-card {
+  background-color: #222; /* كارد أفتح من الخلفية */
+  max-width: 400px;
+}
+
+.gradient-logo {
+  background: linear-gradient(to right, black, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.custom-text {
+  color: #d3d3d3; /* لون فاتح قريب من الرمادي الفاتح */
+}.signup-page {
+  background-color: #1a1a1a; /* أسود داكن للخلفية */
+}
+
+.signup-card {
+  background-color: #222; /* كارد أفتح من الخلفية */
+  max-width: 400px;
+}
+
+.gradient-logo {
+  background: linear-gradient(to right, black, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.text-muted {
+    color: #d3d3d3;
+    
+}
+.text-light {
+  color: #e0e0e0; /* رمادي فاتح جداً للنصوص */
+}
+
+.text-danger {
+  color: #ff4d4d; /* أحمر بارز للروابط */
+}
+

@@ -1,0 +1,15 @@
+<div class="login-page d-flex justify-content-center align-items-center vh-100 text-light">
+  <div class="login-card p-5 rounded shadow-lg text-center">
+    <h1 class="mb-4 gradient-logo">MyMovies</h1>
+    <p class="mb-4 custom-text">Sign in to access the world of cinema!</p>
+
+    <input type="email" [(ngModel)]="email" placeholder="Email" class="form-control mb-3" />
+    <input type="password" [(ngModel)]="password" placeholder="Password" class="form-control mb-4" />
+
+    <button (click)="login()" class="btn btn-danger btn-lg w-100 mb-3">Login</button>
+
+    <p class="text-muted">
+      Don't have an account? <a routerLink="/signup" class="text-danger">Sign Up</a>
+    </p>
+  </div>
+</div>

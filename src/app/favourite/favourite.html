@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <h2 class="mb-4"> Watch List</h2>
+
+  <div *ngIf="favorites.length === 0" class="no-favorites text-center mt-5">
+    No favorites yet. Start adding some
+  </div>
+
+
+
+  <div class="row" *ngIf="favorites.length > 0">
+    <div *ngFor="let m of favorites" class="col-md-3 mb-4">
+      <div class="card position-relative shadow-sm h-100">
+
+        <!-- Poster -->
+        <img [src]="m.poster_path ? 'https://image.tmdb.org/t/p/w500' + m.poster_path : 'assets/no-poster.png'"
+          class="card-img-top rounded" alt="Movie Poster" title="{{ m.title || 'Movie Poster' }}"
+          (click)="goToDetails(m.id)" class="clickable-poster">
+
+        <!-- Favorite Button -->
+        <button type="button" class="fav-heart-btn position-absolute top-0 end-0 m-2 border-0 bg-transparent p-0"
+          (click)="toggleFavorite(m)" [attr.aria-label]="isFavorite(m) ? 'Remove from favorites' : 'Add to favorites'">
+          <i class="bi" [ngClass]="isFavorite(m) ? 'bi-heart-fill text-danger fs-4' : 'bi-heart text-light fs-4'"></i>
+          <span class="visually-hidden">
+            {{ isFavorite(m) ? 'Remove from favorites' : 'Add to favorites' }}
+          </span>
+        </button>
+
+
+        <div class="card-body text-center">
+          <h5 class="card-title text-truncate">{{ m.title }}</h5>
+          <p class="card-text">⭐ {{ m.vote_average }}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

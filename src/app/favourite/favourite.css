@@ -1,0 +1,15 @@
+.fav-heart-btn {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.fav-heart-btn:hover {
+  transform: scale(1.1);
+}
+.no-favorites {
+  color: #f8f9fa; /* لون فاتح للنص */
+}
+.clickable-poster {
+  cursor: pointer;
+}
+
